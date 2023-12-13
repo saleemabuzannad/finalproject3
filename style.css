@@ -1,7 +1,11 @@
 p{
     color:whitesmoke;
-    background: red
-font:fixedsize 10px;
-font-style:italic
-
+    background: red;
+    font-style:italic;
 }
+
+div{
+width: 100px;
+height: 100px;
+background-color: chocolate;
+} 
