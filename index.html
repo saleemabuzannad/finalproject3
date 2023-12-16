@@ -10,24 +10,32 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Flag Quiz Game</h1>
-        <div id="quiz-container">
-            <div id="flag-container">
-                <img id="flagImage" src="" alt="Flag Image">
+    <main>
+        <div class="container">
+            <h1>flags of the world</h1>
+            <div class="box">
+                <h3>Score: <span></span></h3>
+                <div class="count">question: <span></span></div>
             </div>
-            <div id="options-container">
-                <button class="option" onclick="checkAnswer(this)"></button>
-                <button class="option" onclick="checkAnswer(this)"></button>
-                <button class="option" onclick="checkAnswer(this)"></button>
+            <div class="flags">
+                <div class="flag-img">
+                    <img src="">
+                </div>
+                <div class="flag-options">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="score">
+                    <h3 class="right">Your Right Answers: <span></span></h3>
+                    <h3 class="incorrect">Your Incorrect Answers: <span></span></h3>
+                    <button id="newGame">New Game</button>
+                </div>
             </div>
         </div>
-        <div id="result-container">
-            <p id="result"></p>
-            <button onclick="nextQuestion()">Next Question</button>
-        </div>
-    </div>
-
+    </main>
     <script src="js/main.js"></script>
 </body>
 
