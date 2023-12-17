@@ -26,4 +26,11 @@ width: 60%;
     font-size: 1.2em;
     font-weight: 600;
     letter-spacing: 0.03em;
+    line-height: 1.8em;
+    color:black
+}
+.draggable-objects,
+.drop-points{
+display: flex;
+
 }
