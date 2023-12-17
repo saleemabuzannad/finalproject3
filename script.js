@@ -38,5 +38,4 @@ const RandomValueGenerator = () => {
     return data[Math.floor(Math.random() * data.
         length)];
 
-    console.log(RandomValueGenerator());
 };
