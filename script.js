@@ -35,7 +35,7 @@ let count =0;
 
 //Random value from Array
 const RandomValueGenerator = () => {
-    return data[Math.floor(math.random() * data.length)]
-}
+    return data[Math.floor(Math.random() * data.length)]
+};
 
 console.log(RandomValueGenerator());
