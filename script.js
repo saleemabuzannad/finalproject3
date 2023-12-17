@@ -39,3 +39,5 @@ const RandomValueGenerator = () => {
         length)];
 
 };
+
+console.log(RandomValueGenerator());
