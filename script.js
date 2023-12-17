@@ -34,9 +34,9 @@ catch(e){
 let count =0;
 
 //Random value from Array
-const RandomValueGenerator = () => {}
+const RandomValueGenerator = () => {
     return data[Math.floor(Math.random() * data.
         length)];
 
     console.log(RandomValueGenerator());
-
+};
