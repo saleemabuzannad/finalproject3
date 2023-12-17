@@ -33,4 +33,4 @@ catch(e){
 };
 let count =0;
 
-console.log(RandomValueGenerator());
+console.log(randomValueGenerator());
