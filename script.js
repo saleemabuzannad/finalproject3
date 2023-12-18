@@ -1,6 +1,5 @@
 
-let currentIndex = 0;
-let rightAnswer = 0;
+
 
 function getQuestions() {
     let myRequest = new XMLHttpRequest();
@@ -11,6 +10,7 @@ function getQuestions() {
         }
     }   
     myRequest.open("GET", "js/flag_questions.json",true);
+    myRequest.send();
 }
         
 getQuestions()
