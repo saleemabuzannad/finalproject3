@@ -39,11 +39,25 @@ function getQuestions() {
                     checkAnswer(rightAnswer, qCount);
                 }, 500);
 
+                setTimeout(() => {
+                    //Remove Previous Image Source
+                    flagImg.src = '';
+                    //Remove All Classes (active,success,wrong)
+                    li.classList.remove('active');
+                    li.classList.remove('success');
+                    li.classList.remove('wrong');
+
+
+                    //Add Questions Data To Show The Next Question
+                    addQuestionData(questions[currentIndex], qCount);
+                }, 1000);
+
         })
     })   
 
 }
     }
+
     myRequest.open("GET", "js/flag_questions.json",true);
     myRequest.send();
 }
