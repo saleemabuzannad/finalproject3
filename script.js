@@ -59,7 +59,7 @@ function getQuestions() {
     }
 
     myRequest.open("GET", "/flag_questions.json",true);
-    myRequest.send ();
+    
 }
         
 getQuestions();
