@@ -34,33 +34,40 @@ function getQuestions() {
                 //Increase Index
                 currentIndex++;
 
-                 //Check The Answer after 500ms
-                 setTimeout(() => {
+                   //Check The Answer after 500ms
+                   setTimeout(() => {
                     checkAnswer(rightAnswer, qCount);
                 }, 500);
 
                 setTimeout(() => {
                     //Remove Previous Image Source
-                    flagimg.src = '';
+                    flagImg.src = '';
                     //Remove All Classes (active,success,wrong)
                     li.classList.remove('active');
                     li.classList.remove('success');
                     li.classList.remove('wrong');
 
-
                     //Add Questions Data To Show The Next Question
                     addQuestionData(questions[currentIndex], qCount);
                 }, 1000);
 
-        })
-    })   
-
-}
+                //Show Results
+                setTimeout(() => {
+                    showResults(qCount);
+                }, 1002);
+            });
+        });
     }
+}
+myRequest.open("GET", "js/flag_questions.json", true);
+myRequest.send();
+}
 
+       
     myRequest.open("GET", "/flag_questions.json",true);
     
-}
+
+
         
 getQuestions();
 
@@ -99,3 +106,16 @@ function addQuestionData(obj, count) {
         }
     }
  }
+
+
+ //Function To Show result correct and wrong answer
+function showResults(count) {
+    if (currentIndex === count) {
+        flagOptions.innerHTML = '';
+        flagImgDiv.innerHTML = '';
+        scoreDiv.style.display = 'block';
+        correctAns.innerHTML = rightAnswer;
+        incorrectAns.innerHTML = count - rightAnswer;
+    }
+ }
+ 
