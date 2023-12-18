@@ -21,7 +21,7 @@ function getQuestions() {
             console.log(questions);
         }
     }   
-    myRequest.open("GET,", "js/flag_questions.json",true);
+    myRequest.open("GET", "js/flag_questions.json",true);
 }
         
 getQuestions()
