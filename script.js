@@ -61,14 +61,7 @@ function getQuestions() {
 }
 myRequest.open("GET", "js/flag_questions.json", true);
 myRequest.send();
-}
-
-       
-    myRequest.open("GET", "/flag_questions.json",true);
-    
-
-
-        
+}    
 getQuestions();
 
 function QuestionNum(num) {
