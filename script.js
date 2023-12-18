@@ -1,14 +1,20 @@
 //Select Elements
 let countspan = document.querySelector('.count span')
+let flagimgDiv = document.querySelector('.flag-img')
+let flagimg = document.querySelector('.flag-img img')
+let flagOptions = document.querySelector('.flag-options ul')
+let flaglis= document.querySelectorAll('.flag-options ul li')
+
+let currentIndex = 0; 
 
 
-function getQuestions() {
+function getQuestions() { 
     let myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let questions = JSON.parse(this.responseText);
             //Number Of Question Each New Game
-                     let qCount = 10;
+                     let qCount = 5;
                      questionsNum(qCount)
           
         }
@@ -22,5 +28,12 @@ getQuestions();
 function QuestionNum(num) {
 countspan.innerHTML = num;
 
+
+}
+
+function addQuestionData(obj, count){
+if(currentIndex < count) {
+    flagimg.src= `img/${obj.img}`;
+}
 
 }
