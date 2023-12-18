@@ -16,7 +16,8 @@ function getQuestions() {
             //Number Of Question Each New Game
                      let qCount = 5;
                      questionsNum(qCount)
-          
+          //Add Questions Data
+          addQuestionData(questions[currentIndex],qCount)
         }
     }   
     myRequest.open("GET", "js/flag_questions.json",true);
@@ -31,9 +32,18 @@ countspan.innerHTML = num;
 
 }
 
-function addQuestionData(obj, count){
-if(currentIndex < count) {
-    flagimg.src= `img/${obj.img}`;
-}
-
-}
+function addQuestionData(obj, count) {
+    if (currentIndex < count) {
+        flagImg.src = `img/${obj.img}`;
+        //Create Options
+        flagLis.forEach((li, i) => {
+            //Give each Li a dynamic Id
+            li.id = `answer_${i+1}`;
+            //Create for Each Li a dynamic data-attribut
+            li.dataset.answer = obj[`options`][i];
+            //Insert the Option in the li
+            li.innerHTML = obj[`options`][i];
+        });
+    }
+ }
+ 
