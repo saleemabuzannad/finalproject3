@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    background: url(..img/bg.jpg) no-repeat;
+    background: url(img/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
