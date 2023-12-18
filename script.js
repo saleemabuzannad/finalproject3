@@ -23,11 +23,11 @@ function getQuestions() {
             let questions = JSON.parse(this.responseText);
             //Number Of Question Each New Game
                      let qCount = 5;
-                     questionsNum(qCount)
+                     questions(qCount)
           //Add Questions Data
           addQuestionData(questions[currentIndex],qCount)
 
-          flagLis.forEach(li => {
+          flaglis.forEach(li => {
             li.addEventListener('click', () => {
                 let rightAnswer = questions[currentIndex].right_answer;
                 li.classList.add('active');
@@ -41,7 +41,7 @@ function getQuestions() {
 
                 setTimeout(() => {
                     //Remove Previous Image Source
-                    flagImg.src = '';
+                    flagimg.src = '';
                     //Remove All Classes (active,success,wrong)
                     li.classList.remove('active');
                     li.classList.remove('success');
@@ -74,7 +74,7 @@ function addQuestionData(obj, count) {
     if (currentIndex < count) {
         flagimg.src = `img/${obj.img}`;
         //Create Options
-        flagLis.forEach((li, i) => {
+        flaglis.forEach((li, i) => {
             //Give each Li a dynamic Id
             li.id = `answer_${i+1}`;
             //Create for Each Li a dynamic data-attribut
@@ -86,15 +86,15 @@ function addQuestionData(obj, count) {
  }
  function checkAnswer(rAnswer, count) {
     let choosenAnswer;
-    for (let i = 0; i < flagLis.length; i++) {
-        if (flagLis[i].classList.contains('active')) {
-            choosenAnswer = flagLis[i].dataset.answer;
+    for (let i = 0; i < flaglis.length; i++) {
+        if (flaglis[i].classList.contains('active')) {
+            choosenAnswer = flaglis[i].dataset.answer;
             if (rAnswer === choosenAnswer) {
-                flagLis[i].classList.add('success');
+                flaglis[i].classList.add('success');
                 rightAnswer++;
                 score.innerHTML = rightAnswer;
             } else {
-                flagLis[i].classList.add('wrong');
+                flaglis[i].classList.add('wrong');
             }
         }
     }
