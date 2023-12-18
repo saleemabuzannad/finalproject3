@@ -1,4 +1,5 @@
-
+//Select Elements
+let countspan = document.querySelector('.count span')
 
 
 function getQuestions() {
@@ -6,7 +7,10 @@ function getQuestions() {
     myRequest.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let questions = JSON.parse(this.responseText);
-            console.log(questions);
+            //Number Of Question Each New Game
+                     let qCount = 10;
+                     questionsNum(qCount)
+          
         }
     }   
     myRequest.open("GET", "js/flag_questions.json",true);
@@ -14,3 +18,9 @@ function getQuestions() {
 }
         
 getQuestions();
+
+function QuestionNum(num) {
+countspan.innerHTML = num;
+
+
+}
