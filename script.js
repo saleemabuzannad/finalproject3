@@ -13,4 +13,4 @@ function getQuestions() {
     myRequest.send();
 }
         
-getQuestions()
+getQuestions();
