@@ -1,11 +1,19 @@
 //Select Elements
-let countspan = document.querySelector('.count span')
-let flagimgDiv = document.querySelector('.flag-img')
-let flagimg = document.querySelector('.flag-img img')
-let flagOptions = document.querySelector('.flag-options ul')
-let flaglis= document.querySelectorAll('.flag-options ul li')
+let countspan = document.querySelector('.count span');
+let flagimgDiv = document.querySelector('.flag-img');
+let flagimg = document.querySelector('.flag-img img');
+let flagOptions = document.querySelector('.flag-options ul');
+let flaglis= document.querySelectorAll('.flag-options ul li');
+let score = document.querySelector('h3 span');
+let scoreDiv = document.querySelector('.score');
+let correctAns = document.querySelector('.score .right span');
+let incorrectAns = document.querySelector('.score .incorrect span');
+let btnNewGame = document.querySelector('#newGame');
 
-let currentIndex = 0; 
+
+
+let currentIndex = 0;
+let rightAnswer = 0;
 
 
 function getQuestions() { 
@@ -18,8 +26,24 @@ function getQuestions() {
                      questionsNum(qCount)
           //Add Questions Data
           addQuestionData(questions[currentIndex],qCount)
-        }
-    }   
+
+          flagLis.forEach(li => {
+            li.addEventListener('click', () => {
+                let rightAnswer = questions[currentIndex].right_answer;
+                li.classList.add('active');
+                //Increase Index
+                currentIndex++;
+
+                 //Check The Answer after 500ms
+                 setTimeout(() => {
+                    checkAnswer(rightAnswer, qCount);
+                }, 500);
+
+        })
+    })   
+
+}
+    }
     myRequest.open("GET", "js/flag_questions.json",true);
     myRequest.send();
 }
@@ -34,7 +58,7 @@ countspan.innerHTML = num;
 
 function addQuestionData(obj, count) {
     if (currentIndex < count) {
-        flagImg.src = `img/${obj.img}`;
+        flagimg.src = `img/${obj.img}`;
         //Create Options
         flagLis.forEach((li, i) => {
             //Give each Li a dynamic Id
@@ -61,4 +85,3 @@ function addQuestionData(obj, count) {
         }
     }
  }
- 
