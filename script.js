@@ -118,4 +118,7 @@ function showResults(count) {
         incorrectAns.innerHTML = count - rightAnswer;
     }
  }
- 
+ //To Generate A New Game
+btnNewGame.addEventListener('click', () => {
+    window.location.reload();
+});
